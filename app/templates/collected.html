@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Credential Management</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon/verified.png') }}">
+</head>
+<body>
+    <form class="form" id="form" action="/view_raw_data" method="GET">
+        <div class="form-header">
+            <img class="logo" src="{{ url_for('static', filename='icon/folder.png') }}" alt="Authenticater">
+        </div>
+        <p class="collected-text">Credential has been successfully collected.</p>
+        <button type="submit" class="button-confirm">View JSON</button>
+        <button type="button" class="button-confirm" onclick="editData()">Edit Data</button>
+    </form>
+    <script>
+        function editData() {
+            window.location.href = '/display_data';
+        }
+    </script>
+</body>
+</html>

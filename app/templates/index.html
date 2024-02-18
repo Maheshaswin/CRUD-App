@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Credential Management</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon/credential.png') }}">
+</head>
+<body>
+    <form method="post" class="form">
+        <div class="form-header">
+            <img class="logo" src="{{ url_for('static', filename='icon/data-gathering.png') }}" alt="Authenticater">
+        </div>   
+        <input type="email" placeholder="Email ID" name="email" class="input" required autocomplete="off">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">
+                        {{ message }}
+                        <button type="button" class="close-button" onclick="this.parentElement.style.display = 'none';">×</button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <input type="password" placeholder="Password" name="password" class="input" required autocomplete="off">
+        <button type="submit" class="button-confirm">Submit</button>
+    </form>
+</body>
+</html>
