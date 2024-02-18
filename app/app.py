@@ -7,7 +7,8 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 # MongoDB connection details
-mongo_url = "mongodb://localhost:27017/"
+#mongo_url = "mongodb://localhost:27017/"
+mongo_url = "mongodb://mongo:27017/"
 db_name = "task_db"
 collection_name = "cred_collection"
 
